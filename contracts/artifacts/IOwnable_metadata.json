@@ -1,0 +1,143 @@
+{
+	"compiler": {
+		"version": "0.7.5+commit.eb77ed08"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "manager",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pullManagement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner_",
+						"type": "address"
+					}
+				],
+				"name": "pushManagement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceManagement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Wrappers over Solidity's arithmetic operations with added overflow checks. Arithmetic operations in Solidity wrap on overflow. This can easily result in bugs, because programmers usually assume that an overflow raises an error, which is the standard behavior in high level programming languages. `SafeMath` restores this intuition by reverting the transaction when an operation overflows. Using this library instead of the unchecked operations eliminates an entire class of bugs, so it's recommended to use it always.",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/sOHM.sol": "IOwnable"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/interfaces/IERC20.sol": {
+			"keccak256": "0xaef2d7d42eb10852e00f6ac29249f435cf5fd4391fbeb151e04c34558bf22ad7",
+			"license": "AGPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://8c8befcd3203d01429bfc37c550b7535509623141376b65e4caf2cb7100ad503",
+				"dweb:/ipfs/QmPF29x7Cp4BVf1y1NRsvdb7EDtx6KchjP9gqaSqdyxHRe"
+			]
+		},
+		"contracts/interfaces/IERC2612Permit.sol": {
+			"keccak256": "0x2b28bfc4e0621eb60b914917dc916cc08ba97eee0a3b06d98fe56ff9ce2c0d59",
+			"license": "AGPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://0b5ddc8c3db72e2cd69a8defcc016910454578b7f46899a7ce0bdec603e58640",
+				"dweb:/ipfs/QmYNhiaGjMdGXhooPCTxW3AYNWFii9WSkUcR4KkPqvRM3S"
+			]
+		},
+		"contracts/libraries/Address.sol": {
+			"keccak256": "0x21514997ee188f5f8a0daa04e753e8351fa4eb63f5a58dd83db476ce843e06d2",
+			"license": "AGPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://beb38d20dbe4e9e63a494f5c77e0aea8c02b2d3d65245662155d2637cfb47e18",
+				"dweb:/ipfs/QmNnrPXntFNVATQboeTbFtQcfkziQ2wJiUKrzsggacSA3z"
+			]
+		},
+		"contracts/libraries/Counters.sol": {
+			"keccak256": "0x7803a8db31ab4407c907b44536f70e1c460835997bb31cdf67a7f8ed0edf7f9e",
+			"license": "AGPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://a6b92404baa42cc67f22266ea5f6967cc1039b1443f9743a151b78994ee97820",
+				"dweb:/ipfs/Qmdm7doaGJN599BEQCrmY6VKNSynmYrzhYnBK9LK9mXnJo"
+			]
+		},
+		"contracts/libraries/SafeMath.sol": {
+			"keccak256": "0x6d3320fabf88899419574e2eb69b48fb5e05ef1eeedbc8e780a6f1731184f2b7",
+			"license": "AGPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://575afee9386dcde7b4f734c31d19ca707cf405568ebf17cf84a053074a0fa496",
+				"dweb:/ipfs/QmZaE7QXR14sJi4oK4NxW2g5YoFkGFMtGdDBBNHHzCuLCL"
+			]
+		},
+		"contracts/sOHM.sol": {
+			"keccak256": "0x785093256153ed3bcee1e666d88a596cd03c2af12b9962d51f4271ecf455094d",
+			"license": "AGPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://aefbf404918518679ed39de9b9a1740403e60b28d83a05072642f58743517348",
+				"dweb:/ipfs/QmcwTTRe29fy4Dvj8vhp4DCaqtAKuEqvnuNMAsVatUEUwY"
+			]
+		},
+		"contracts/types/ERC20.sol": {
+			"keccak256": "0xa1b58a3231d7efe286f6bf32ecbdbd2a8a8395c70da96d960e3e0ecf1a6e0aa2",
+			"license": "AGPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://8fcb5129cdae755dabf3798f92161941944f899154a0eaab2dda0a1e5f78ee03",
+				"dweb:/ipfs/QmSRzMKPL8kYhc521GKDuzgyHvqFsP5VMxw532XXadyBNV"
+			]
+		},
+		"contracts/types/ERC20Permit.sol": {
+			"keccak256": "0xea1d7e9f03035c6e454dddd84ca8693b6305868b4a85de215bea6ed487ae52bd",
+			"license": "AGPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://ceb0f9bc321a996264ca07300e6fe5eefddfa05ed1c230b6ebdde3f395067604",
+				"dweb:/ipfs/QmbrBvTNjEQjCkNgLTucBBMmRFzNqY9xPmMZuNiHzPJcPq"
+			]
+		}
+	},
+	"version": 1
+}

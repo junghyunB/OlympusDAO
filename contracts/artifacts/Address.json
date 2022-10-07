@@ -1,0 +1,73 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220f7bfdd8789c458346866d6810622852a5261c8359b8ca4169f988207d641fc6464736f6c63430007050033",
+			"opcodes": "PUSH1 0x56 PUSH1 0x23 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH1 0x0 BYTE PUSH1 0x73 EQ PUSH1 0x16 JUMPI INVALID JUMPDEST ADDRESS PUSH1 0x0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xF7 0xBF 0xDD DUP8 DUP10 0xC4 PC CALLVALUE PUSH9 0x66D6810622852A5261 0xC8 CALLDATALOAD SWAP12 DUP13 LOG4 AND SWAP16 SWAP9 DUP3 SMOD 0xD6 COINBASE 0xFC PUSH5 0x64736F6C63 NUMBER STOP SMOD SDIV STOP CALLER ",
+			"sourceMap": "739:9470:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220f7bfdd8789c458346866d6810622852a5261c8359b8ca4169f988207d641fc6464736f6c63430007050033",
+			"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xF7 0xBF 0xDD DUP8 DUP10 0xC4 PC CALLVALUE PUSH9 0x66D6810622852A5261 0xC8 CALLDATALOAD SWAP12 DUP13 LOG4 AND SWAP16 SWAP9 DUP3 SMOD 0xD6 COINBASE 0xFC PUSH5 0x64736F6C63 NUMBER STOP SMOD SDIV STOP CALLER ",
+			"sourceMap": "739:9470:1:-:0;;;;;;;;"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "17200",
+				"executionCost": "97",
+				"totalCost": "17297"
+			},
+			"internal": {
+				"_functionCallWithValue(address,bytes memory,uint256,string memory)": "infinite",
+				"_verifyCallResult(bool,bytes memory,string memory)": "infinite",
+				"addressToString(address)": "infinite",
+				"functionCall(address,bytes memory)": "infinite",
+				"functionCall(address,bytes memory,string memory)": "infinite",
+				"functionCallWithValue(address,bytes memory,uint256)": "infinite",
+				"functionCallWithValue(address,bytes memory,uint256,string memory)": "infinite",
+				"functionDelegateCall(address,bytes memory)": "infinite",
+				"functionDelegateCall(address,bytes memory,string memory)": "infinite",
+				"functionStaticCall(address,bytes memory)": "infinite",
+				"functionStaticCall(address,bytes memory,string memory)": "infinite",
+				"isContract(address)": "infinite",
+				"sendValue(address payable,uint256)": "infinite"
+			}
+		},
+		"methodIdentifiers": {}
+	},
+	"abi": []
+}

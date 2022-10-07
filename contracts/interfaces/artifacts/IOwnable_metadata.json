@@ -1,0 +1,86 @@
+{
+	"compiler": {
+		"version": "0.7.5+commit.eb77ed08"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "manager",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pullManagement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner_",
+						"type": "address"
+					}
+				],
+				"name": "pushManagement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceManagement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/interfaces/Ownable.sol": "IOwnable"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/interfaces/Ownable.sol": {
+			"keccak256": "0xcbe7146e57c25291f32af9e051e9c3a15f42f79f25c2fbef37a667dd82e00357",
+			"license": "AGPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://648792fddf1a8dc11deb4973ee579ae8cf66ce084f37c5b956c2157fb951e832",
+				"dweb:/ipfs/QmNS7Jn8tGipLFmbm7MLGsMMrXMBENbvnYENK45SBnSkeG"
+			]
+		}
+	},
+	"version": 1
+}

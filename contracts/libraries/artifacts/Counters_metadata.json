@@ -1,0 +1,53 @@
+{
+	"compiler": {
+		"version": "0.7.5+commit.eb77ed08"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/libraries/Counters.sol": "Counters"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/libraries/Counters.sol": {
+			"keccak256": "0x7803a8db31ab4407c907b44536f70e1c460835997bb31cdf67a7f8ed0edf7f9e",
+			"license": "AGPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://a6b92404baa42cc67f22266ea5f6967cc1039b1443f9743a151b78994ee97820",
+				"dweb:/ipfs/Qmdm7doaGJN599BEQCrmY6VKNSynmYrzhYnBK9LK9mXnJo"
+			]
+		},
+		"contracts/libraries/SafeMath.sol": {
+			"keccak256": "0x6d3320fabf88899419574e2eb69b48fb5e05ef1eeedbc8e780a6f1731184f2b7",
+			"license": "AGPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://575afee9386dcde7b4f734c31d19ca707cf405568ebf17cf84a053074a0fa496",
+				"dweb:/ipfs/QmZaE7QXR14sJi4oK4NxW2g5YoFkGFMtGdDBBNHHzCuLCL"
+			]
+		}
+	},
+	"version": 1
+}

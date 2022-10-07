@@ -1,0 +1,54 @@
+{
+	"compiler": {
+		"version": "0.7.5+commit.eb77ed08"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Wrappers over Solidity's arithmetic operations with added overflow checks. Arithmetic operations in Solidity wrap on overflow. This can easily result in bugs, because programmers usually assume that an overflow raises an error, which is the standard behavior in high level programming languages. `SafeMath` restores this intuition by reverting the transaction when an operation overflows. Using this library instead of the unchecked operations eliminates an entire class of bugs, so it's recommended to use it always.",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/sOHM.sol": "Address"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/libraries/SafeMath.sol": {
+			"keccak256": "0x6d3320fabf88899419574e2eb69b48fb5e05ef1eeedbc8e780a6f1731184f2b7",
+			"license": "AGPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://575afee9386dcde7b4f734c31d19ca707cf405568ebf17cf84a053074a0fa496",
+				"dweb:/ipfs/QmZaE7QXR14sJi4oK4NxW2g5YoFkGFMtGdDBBNHHzCuLCL"
+			]
+		},
+		"contracts/sOHM.sol": {
+			"keccak256": "0x12118ba6045b0e6549f6f4c15d947162724c1954414dca0089f59785f47d9ec3",
+			"license": "AGPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://01ca9202b69af8a8c6a5370de43af19d8b8cf25b087a211235ed77d43ce662a9",
+				"dweb:/ipfs/QmdcZa89Dw3ex5BNjtMbJQGBqvENydXLJqwgN4NT4QsS3a"
+			]
+		}
+	},
+	"version": 1
+}

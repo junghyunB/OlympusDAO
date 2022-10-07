@@ -1,0 +1,139 @@
+{
+	"compiler": {
+		"version": "0.7.5+commit.eb77ed08"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "nonces",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "permit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"nonces(address)": {
+					"details": "Returns the current ERC2612 nonce for `owner`. This value must be included whenever a signature is generated for {permit}. Every successful call to {permit} increases ``owner``'s nonce by one. This prevents a signature from being used multiple times."
+				},
+				"permit(address,address,uint256,uint256,uint8,bytes32,bytes32)": {
+					"details": "Sets `amount` as the allowance of `spender` over `owner`'s tokens, given `owner`'s signed approval. IMPORTANT: The same issues {IERC20-approve} has related to transaction ordering also apply here. Emits an {Approval} event. Requirements: - `owner` cannot be the zero address. - `spender` cannot be the zero address. - `deadline` must be a timestamp in the future. - `v`, `r` and `s` must be a valid `secp256k1` signature from `owner` over the EIP712-formatted function arguments. - the signature must use ``owner``'s current nonce (see {nonces}). For more information on the signature format, see the https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP section]."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/sOHM.sol": "IERC2612Permit"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/interfaces/IERC20.sol": {
+			"keccak256": "0xaef2d7d42eb10852e00f6ac29249f435cf5fd4391fbeb151e04c34558bf22ad7",
+			"license": "AGPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://8c8befcd3203d01429bfc37c550b7535509623141376b65e4caf2cb7100ad503",
+				"dweb:/ipfs/QmPF29x7Cp4BVf1y1NRsvdb7EDtx6KchjP9gqaSqdyxHRe"
+			]
+		},
+		"contracts/libraries/Address.sol": {
+			"keccak256": "0x21514997ee188f5f8a0daa04e753e8351fa4eb63f5a58dd83db476ce843e06d2",
+			"license": "AGPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://beb38d20dbe4e9e63a494f5c77e0aea8c02b2d3d65245662155d2637cfb47e18",
+				"dweb:/ipfs/QmNnrPXntFNVATQboeTbFtQcfkziQ2wJiUKrzsggacSA3z"
+			]
+		},
+		"contracts/libraries/SafeMath.sol": {
+			"keccak256": "0x6d3320fabf88899419574e2eb69b48fb5e05ef1eeedbc8e780a6f1731184f2b7",
+			"license": "AGPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://575afee9386dcde7b4f734c31d19ca707cf405568ebf17cf84a053074a0fa496",
+				"dweb:/ipfs/QmZaE7QXR14sJi4oK4NxW2g5YoFkGFMtGdDBBNHHzCuLCL"
+			]
+		},
+		"contracts/sOHM.sol": {
+			"keccak256": "0xd6e42f13272800809eeaaeb2ea1e645df73e950c1e6776e2a460ee0b712e89ca",
+			"license": "AGPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://e8ececdb358bb433ff02f75067ff9c70e19a11ad981f101c57581db9b6eec7db",
+				"dweb:/ipfs/QmZLk6UUauA6FSHMLtZSh97MHHNGKtWLG32G9xBidBDiqk"
+			]
+		}
+	},
+	"version": 1
+}

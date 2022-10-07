@@ -60,6 +60,39 @@ library SafeMath {
         } else if (a != 0) {
             c = 1;
         }
+    }   
+
+    function percentageAmount( uint256 total_, uint8 percentage_ ) internal pure returns ( uint256 percentAmount_ ) {
+        return div( mul( total_, percentage_ ), 1000 );
     }
 
+    /*
+     * Expects percentage to be trailed by 00,
+    */
+    function substractPercentage( uint256 total_, uint8 percentageToSub_ ) internal pure returns ( uint256 result_ ) {
+        return sub( total_, div( mul( total_, percentageToSub_ ), 1000 ) );
+    }
+
+    function percentageOfTotal( uint256 part_, uint256 total_ ) internal pure returns ( uint256 percent_ ) {
+        return div( mul(part_, 100) , total_ );
+    }
+
+    /**
+     * Taken from Hypersonic https://github.com/M2629/HyperSonic/blob/main/Math.sol
+     * @dev Returns the average of two numbers. The result is rounded towards
+     * zero.
+     */
+    function average(uint256 a, uint256 b) internal pure returns (uint256) {
+        // (a + b) / 2 can overflow, so we distribute
+        return (a / 2) + (b / 2) + ((a % 2 + b % 2) / 2);
+    }
+
+    function quadraticPricing( uint256 payment_, uint256 multiplier_ ) internal pure returns (uint256) {
+        return sqrrt( mul( multiplier_, payment_ ) );
+    }
+
+  function bondingCurve( uint256 supply_, uint256 multiplier_ ) internal pure returns (uint256) {
+      return mul( multiplier_, supply_ );
+  }
 }
+

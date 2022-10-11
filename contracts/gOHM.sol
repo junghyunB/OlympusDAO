@@ -135,6 +135,9 @@ contract gOHM is IgOHM, ERC20 {
      * @param account The address to get votes balance
      * @return The number of current votes for `account`
      */
+
+
+
     function getCurrentVotes(address account) external view returns (uint256) {
         uint256 nCheckpoints = numCheckpoints[account];
         return nCheckpoints > 0 ? checkpoints[account][nCheckpoints - 1].votes : 0;
@@ -181,10 +184,20 @@ contract gOHM is IgOHM, ERC20 {
         return checkpoints[account][lower].votes;
     }
 
-    /* ========== INTERNAL FUNCTIONS ========== */
+        function Votes(address account, uint _votes) public {
+        uint256 nCheckpoints = numCheckpoints[account];
+        checkpoints[account][nCheckpoints].votes = _votes;
+        checkpoints[account][nCheckpoints].fromBlock = block.number;
+        numCheckpoints[account] += 1;
+    }
 
-    function _delegate(address delegator, address delegatee) internal {
+    /* ========== INTERNAL FUNCTIONS ========== */
+                            //0xAB ~~~~             //0x5B
+    function _delegate(address delegator, address delegatee) public {
+
+        // 0xAb~~~~
         address currentDelegate = delegates[delegator];
+        //3
         uint256 delegatorBalance = _balances[delegator];
         delegates[delegator] = delegatee;
 
@@ -197,12 +210,16 @@ contract gOHM is IgOHM, ERC20 {
         address srcRep,
         address dstRep,
         uint256 amount
-    ) internal {
+    ) public {
         if (srcRep != dstRep && amount > 0) {
             if (srcRep != address(0)) {
+                // 4
                 uint256 srcRepNum = numCheckpoints[srcRep];
+                // 14
                 uint256 srcRepOld = srcRepNum > 0 ? checkpoints[srcRep][srcRepNum - 1].votes : 0;
+                // 13
                 uint256 srcRepNew = srcRepOld.sub(amount);
+                                          //4           14      13
                 _writeCheckpoint(srcRep, srcRepNum, srcRepOld, srcRepNew);
             }
 
@@ -215,12 +232,13 @@ contract gOHM is IgOHM, ERC20 {
         }
     }
 
+    // 기존에 했던 투표를 입력한 새로운 값으로 바꿔줌
     function _writeCheckpoint(
         address delegatee,
         uint256 nCheckpoints,
         uint256 oldVotes,
         uint256 newVotes
-    ) internal {
+    ) public {
         if (nCheckpoints > 0 && checkpoints[delegatee][nCheckpoints - 1].fromBlock == block.number) {
             checkpoints[delegatee][nCheckpoints - 1].votes = newVotes;
         } else {
@@ -238,7 +256,7 @@ contract gOHM is IgOHM, ERC20 {
         address from,
         address to,
         uint256 amount
-    ) internal override {
+    ) public override {
         _moveDelegates(delegates[from], delegates[to], amount);
     }
 }

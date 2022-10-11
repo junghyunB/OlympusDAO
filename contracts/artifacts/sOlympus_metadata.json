@@ -201,6 +201,80 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "TOTAL_GONS",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "_gonBalances",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "_gonsPerFragment",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "previousCirculating_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "profit_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "epoch_",
+						"type": "uint256"
+					}
+				],
+				"name": "_storeRebase",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -728,6 +802,16 @@
 			"details": "Wrappers over Solidity's arithmetic operations with added overflow checks. Arithmetic operations in Solidity wrap on overflow. This can easily result in bugs, because programmers usually assume that an overflow raises an error, which is the standard behavior in high level programming languages. `SafeMath` restores this intuition by reverting the transaction when an operation overflows. Using this library instead of the unchecked operations eliminates an entire class of bugs, so it's recommended to use it always.",
 			"kind": "dev",
 			"methods": {
+				"_storeRebase(uint256,uint256,uint256)": {
+					"params": {
+						"epoch_": "uint",
+						"previousCirculating_": "uint",
+						"profit_": "uint"
+					},
+					"returns": {
+						"_0": "bool"
+					}
+				},
 				"decimals()": {
 					"details": "Returns the number of decimals used to get its user representation. For example, if `decimals` equals `2`, a balance of `505` tokens should be displayed to a user as `5,05` (`505 / 10 ** 2`). Tokens usually opt for a value of 18, imitating the relationship between Ether and Wei. This is the value {ERC20} uses, unless {_setupDecimals} is called. NOTE: This information is only used for _display_ purposes: it in no way affects any of the arithmetic of the contract, including {IERC20-balanceOf} and {IERC20-transfer}."
 				},
@@ -746,14 +830,6 @@
 				"permit(address,address,uint256,uint256,uint8,bytes32,bytes32)": {
 					"details": "See {IERC2612Permit-permit}."
 				},
-				"rebase(uint256,uint256)": {
-					"params": {
-						"profit_": "uint256"
-					},
-					"returns": {
-						"_0": "uint256"
-					}
-				},
 				"symbol()": {
 					"details": "Returns the symbol of the token, usually a shorter version of the name."
 				},
@@ -766,8 +842,17 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {
+				"_storeRebase(uint256,uint256,uint256)": {
+					"notice": "emits event with data about rebase"
+				},
+				"constructor": {
+					"notice": "constructor()함수   토큰 이름, symbol, decimal, initalizer, 현재까지 총 발행량, 조각당gon값을 세팅"
+				},
+				"initialize(address)": {
+					"notice": "initalize() 함수 stakingContract 주소 세팅, 이주소의 gon자산값 세팅하는 함수"
+				},
 				"rebase(uint256,uint256)": {
-					"notice": "increases sOHM supply to increase staking balances relative to profit_"
+					"notice": "rebase 함수 : profit_ epoch_값을 넣어서 실행 StakingContract 컨트랙트 주소만 호출 가능 함수 내부에서 쓰일 rebaseAmount 변수 선언, circulatingSupply는 circulationSupply()함수의 호출값으로 설정 경우 1 profit_ == 0일때 _totalSupply값을 return 하고 함수 종료 경우 2 circulationgSupply 값이 0보다 클때 rebaseAmount값을 profit_ * _totalSupply / circulatingSupply_값으로 변경 -> 총발행량을 이전 총발행량 + rebaseAmount값으로 변경 -> 변경된 총발행량이 최대 발행량보다 많아지면 총발행량을 최대발행량이랑 같도록 변경 -> 조각당_gon깂을 총GONS / 총발행량으로 변경 -> _storeRebase함수에 매개변수를 넣어 호출 -> 변경된 총 발행량 값을 리턴 위 두 경우에 포함이 안되어있을때 rebaseAmount값을 profit_ 로 변경 -> 발행량을 이전 총발행량 + rebaseAmount값으로 변경 -> 변경된 총발행량이 최대 발행량보다 많아지면 총발행량을 최대발행량이랑 같도록 변경 -> 조각당_gon깂을 총GONS / 총발행량으로 변경 -> _storeRebase함수에 매개변수를 넣어 호출 -> 변경된 총 발행량 값을 리턴"
 				}
 			},
 			"version": 1
@@ -846,11 +931,11 @@
 			]
 		},
 		"contracts/sOHM.sol": {
-			"keccak256": "0x7825f29090d35cfcc8683e3acbf04074cce078bc1e43d4e625aa693e4d1d27b1",
+			"keccak256": "0x90b2bf2a425a490ea390d92a5e805fec489fb05dd7be3aa5762ff520b45f3144",
 			"license": "AGPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://691850a9019b9e8cce1e94d9de61aacdba50b2209cb9bb4d3f8186c549cde856",
-				"dweb:/ipfs/QmcrstC9efAU1F5WWuExhzyWMGCVZhL6kHohTdySzhvLvh"
+				"bzz-raw://15a41cc69daf9150ffadf7f3736308c3be0ebd6adc568a8458ebb629c52ae1ea",
+				"dweb:/ipfs/QmQXKXXHdKx1wY4a3zF42nvRmxTkWyPa12P6AgQq9EySxj"
 			]
 		},
 		"contracts/types/ERC20.sol": {
